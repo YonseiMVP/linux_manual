@@ -57,7 +57,7 @@ There are **THREE** references for each permission.
 
 ### Example
 
-```bash
+```console
 $ ls -al
 total 12
 drwxr-xr-x  2 koasing koasing 4096 11월  28 19:06 .
@@ -79,7 +79,7 @@ drwxr-xr-x 18 koasing koasing 4096 11월  28 18:30 ..
 
 ### If you are trying to access to...
 
-```bash
+```console
 $ ls -al
 total 12
 drwxrwxr-x  2 koasing koasing 4096 11월 30 13:38 .
@@ -91,7 +91,7 @@ drwxr-xr-x 22 koasing koasing 4096 11월 30 13:38 ..
 
 #### NO read permission
 
-```bash
+```console
 $ nano inaccessible
 ```
 
@@ -101,7 +101,7 @@ Permission denied for reading.
 
 #### NO write permission
 
-```bash
+```console
 $ nano readonly
 ```
 
@@ -128,7 +128,7 @@ After adding user execute permission, the file is executed.
 
 ### If you are trying to access to...
 
-```bash
+```console
 $ ls -al
 total 24
 drwxrwxr-x  6 koasing koasing 4096 11월 30 13:50 .
@@ -142,7 +142,7 @@ dr-x------  2 koasing koasing 4096 11월 30 13:50 executable_readonly
 
 #### NO read permission
 
-```bash
+```console
 $ ls -al inaccessible
 ls: cannot open directory 'inaccessible': Permission denied
 ```
@@ -151,7 +151,7 @@ cannot read file list
 
 #### NO write permission
 
-```bash
+```console
 $ ls -al readonly
 ls: cannot access 'readonly/sample_file': Permission denied
 ls: cannot access 'readonly/..': Permission denied
@@ -171,7 +171,7 @@ cannot create a new file (= cannot insert new entry to directory file list).
 
 #### NO execute permission
 
-```bash
+```console
 $ ls -al readwrite
 ls: cannot access 'readwrite/sample_file': Permission denied
 ls: cannot access 'readwrite/..': Permission denied
@@ -190,7 +190,7 @@ because it is required to change directory into itself before modify it.
 
 #### NO write permission but have execute permission
 
-```bash
+```console
 $ ls -al executable_readonly
 total 8
 dr-x------ 2 koasing koasing 4096 11월 30 14:01 .
@@ -205,7 +205,7 @@ Cannot create file because have no write permission.
 
 #### all permissions
 
-```bash
+```console
 $ ls -al executable
 total 8
 drwx------ 2 koasing koasing 4096 11월 30 13:50 .
@@ -216,7 +216,6 @@ total 8
 drwx------ 2 koasing koasing 4096 11월 30 14:06 .
 drwxrwxr-x 7 koasing koasing 4096 11월 30 13:59 ..
 -rw-rw-r-- 1 koasing koasing    0 11월 30 14:06 new_file
-
 ```
 
 can do all works
@@ -230,7 +229,7 @@ can do all works
 DELETE file is directory modification. Even you have no ownership of the file,
 you CAN delete that file IF you have write permission on that directory.
 
-```bash
+```console
 $ ls -al
 total 8
 drwx------ 2 koasing koasing 4096 11월 30 13:50 .
@@ -247,7 +246,7 @@ drwxrwxr-x 7 koasing koasing 4096 11월 30 13:59 ..
 Vice versa, you CANNOT delete even a file that you own, if you have NO write
 permission on that directory.
 
-```bash
+```console
 $ ls -al
 total 8
 dr-x------ 2 koasing koasing 4096 11월 30 13:50 .
