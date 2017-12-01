@@ -1,9 +1,21 @@
 Linux Basics - Install Linux
 ============================
 
-{{ToC}} will be here.
-
-
+- [Linux Basics - Install Linux](#linux-basics---install-linux)
+    - [What and Why Linux?](#what-and-why-linux)
+    - [Before it begins,](#before-it-begins)
+        - [Real machine vs Virtual machine](#real-machine-vs-virtual-machine)
+        - [Distribution](#distribution)
+    - [Prepare](#prepare)
+        - [IF YOU USE REAL MACHINE,](#if-you-use-real-machine)
+        - [Install Oracle VM VirtualBox](#install-oracle-vm-virtualbox)
+        - [Create Virtual Machine and boot](#create-virtual-machine-and-boot)
+    - [Install Linux](#install-linux)
+    - [After Installation](#after-installation)
+        - [Change Ubuntu Repository](#change-ubuntu-repository)
+        - [Update Packages](#update-packages)
+    - [Install SSH Daemon](#install-ssh-daemon)
+    - [Apply Firewall](#apply-firewall)
 
 What and Why Linux?
 -------------------
