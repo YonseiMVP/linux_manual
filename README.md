@@ -4,4 +4,6 @@
 
 [Basic console commands](./03-basic_commands/basic_commands.md)
 
+[Shell](./04-shell/shell.md)
+
 [Permission and Ownership](./05-permission/permission.md)
