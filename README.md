@@ -7,3 +7,5 @@
 [Shell](./04-shell/shell.md)
 
 [Permission and Ownership](./05-permission/permission.md)
+
+[User and Group Management](./06-user_and_group/user_and_group.md)
