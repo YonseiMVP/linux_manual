@@ -20,6 +20,7 @@ Linux has strict permission policy.
             - [NO write permission but have execute permission](#no-write-permission-but-have-execute-permission)
             - [all permissions](#all-permissions)
         - [DELETE file](#delete-file)
+        - [CHDIR Permission](#chdir-permission)
     - [Change Permission](#change-permission)
         - [Symbolic mode](#symbolic-mode)
         - [Octal mode](#octal-mode)
@@ -234,7 +235,7 @@ $ ls -al
 total 8
 drwx------ 2 koasing koasing 4096 11월 30 13:50 .
 drwxrwxr-x 7 koasing koasing 4096 11월 30 13:59 ..
-dr-------- 1 root    root       0 11월 30 13:59 roots_file
+-r-------- 1 root    root       0 11월 30 13:59 roots_file
 $ rm roots_file
 rm: remove write-protected regular empty file `roots_file`? y
 $ ls -al
@@ -251,14 +252,27 @@ $ ls -al
 total 8
 dr-x------ 2 koasing koasing 4096 11월 30 13:50 .
 drwxrwxr-x 7 koasing koasing 4096 11월 30 13:59 ..
-drw-rw-r-- 7 koasing koasing    0 11월 30 13:59 my_file
+-rw-rw-r-- 7 koasing koasing    0 11월 30 13:59 my_file
 $ rm my_file
 rm: cannot remove 'my_file': Permission denied
 ```
 
 
 
------
+### CHDIR Permission
+
+Assume a situation that...
+
+```
+drwxr-xr-x ~/data
+drw-r--r-- ~/data/wired
+drwxr-xr-x ~/data/wired/my_data
+```
+
+Can I `cd` into `~/data/wired/my_data`? The answer is **no**, because one of its
+ancestor has no permission to cd.
+
+
 
 Change Permission
 -----------------
