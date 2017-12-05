@@ -179,7 +179,30 @@ rouglhy,
 - Primary group : used for Group Ownership of newly created file.
 - Supplementary group : used to check user's access priviledge.
 
+Each user could use `newgrp` to temporary change the user's primary group.
 
+```console
+$ groups
+koasing adm cdrom sudo dip plugdev lpadmin sambashare test01
+$ id
+uid=1000(koasing) gid=1000(koasing) groups=1000(koasing),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),113(lpadmin),128(sambashare),1001(test01)
+$ touch my
+$ newgrp test01
+$ id
+uid=1000(koasing) gid=1001(test01) groups=1001(test01),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),113(lpadmin),128(sambashare),1000(koasing)
+$ touch their
+$ exit
+$ id
+uid=1000(koasing) gid=1000(koasing) groups=1000(koasing),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),113(lpadmin),128(sambashare),1001(test01)
+$ touch my2
+$ ls -al
+total 8
+drwxr-xr-x  2 koasing koasing 4096 12월  5 13:16 .
+drwxr-xr-x 23 koasing koasing 4096 12월  4 11:42 ..
+-rw-rw-r--  1 koasing koasing    0 12월  5 13:15 my
+-rw-rw-r--  1 koasing koasing    0 12월  5 13:16 my2
+-rw-rw-r--  1 koasing test01     0 12월  5 13:15 their
+```
 
 Sudoers
 -------
