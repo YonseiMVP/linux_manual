@@ -32,6 +32,26 @@ Do as superuser.
 blahblah
 ```
 
+### Allow firewall
+
+The default RDP port number is 3389. To change port number, modify
+`/etc/xrdp/xrdp.ini`.
+
+```console
+# ufw allow from any to any port 3389
+Rule added
+Rule added (v6)
+# ufw status
+Status: active
+
+To                         Action      From
+--                         ------      ----
+3389                       ALLOW       Anywhere
+3389 (v6)                  ALLOW       Anywhere (v6)
+```
+
+
+
 ### Edit Xwrapper setting
 
 Ref: <http://c-nergy.be/blog/?p=10887>
@@ -77,14 +97,13 @@ On linux server, do as root. **Common Name** will be displayed while connecting.
 ```console
 # cd /etc/xrdp
 # ls -al *.pem
-lrwxrwxrwx  1 root root 34 12월  6 15:35 cert.pem --> /etc/ssl/certs/ssl-cert-snakeoil.pem
-lrwxrwxrwx  1 root root 34 12월  6 15:35 key.pem --> /etc/ssl/private/ssl-cert-snakeoil.pem
+lrwxrwxrwx  1 root root 34 12월  6 15:35 cert.pem -> /etc/ssl/certs/ssl-cert-snakeoil.pem
+lrwxrwxrwx  1 root root 34 12월  6 15:35 key.pem -> /etc/ssl/private/ssl-cert-snakeoil.pem
 # rm *.pem
 # openssl req -x509 -newkey rsa:2048 -nodes -keyout key.pem -out cert.pem -days 3650
 Generating a 2048 bit RSA private key
 ..............................................................................................+++
 ...........................................+++
-unable to write 'random state'
 writing new private key to 'key.pem'
 -----
 You are about to be asked to enter information that will be incorporated
