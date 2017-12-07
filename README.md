@@ -10,6 +10,8 @@
 
 [User and Group Management](./06-user_and_group/user_and_group.md)
 
+[Link](./07-link/link.md)
+
 -----
 
 [Enabling RDP Service](./10-enabling_rdp/enabling_rdp.md)
