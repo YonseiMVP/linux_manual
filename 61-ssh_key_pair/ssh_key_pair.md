@@ -6,6 +6,7 @@
     - [authorized_keys 파일 만들기](#authorizedkeys-%ED%8C%8C%EC%9D%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0)
     - [Key-pair 로그인 해 보기](#key-pair-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%ED%95%B4-%EB%B3%B4%EA%B8%B0)
     - [Key agent 자동 실행](#key-agent-%EC%9E%90%EB%8F%99-%EC%8B%A4%ED%96%89)
+- [WinSCP](#winscp)
 
 SSH 원격접속 및 Key-pair 로그인
 ===============================
@@ -136,3 +137,15 @@ Key agent 자동 실행
 -------------------
 
 누군가 추가하겠지
+
+-----
+
+WinSCP
+======
+
+SSH는 부가적으로 SFTP라고 하는 파일전송 기능도 지원한다.
+이걸 편하게 쓸 수 있는 프로그램이 [WinSCP](https://winscp.net/ko/) 이다.
+
+설치및 사용방법은 누군가 추가하겠지
+
+- Key-pair 인증을 지원하므로, Agent 실행되어 있는 상황에서는 password 를 비워두고 로그인하면 된다.
