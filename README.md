@@ -3,8 +3,6 @@ Linux Basics
 
 [Linux Install](./01-install/install.md)
 
-[Setup SSH key-pair Login](./02-ssh_priv_key/ssh_priv_key.md)
-
 [Basic console commands](./03-basic_commands/basic_commands.md)
 
 [Shell](./04-shell/shell.md)
@@ -29,7 +27,9 @@ DNN Setup (for admin)
 DNN Setup (for user)
 ====================
 
-[Python Virtualenv using Conda](./61-anaconda3/anaconda3.md)
+[Setup SSH key-pair Login](./61-ssh_priv_key/ssh_priv_key.md)
+
+[Python Virtualenv using Conda](./62-anaconda3/anaconda3.md)
 
 
 
