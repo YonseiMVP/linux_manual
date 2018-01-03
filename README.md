@@ -26,6 +26,13 @@ DNN Setup (for admin)
 
 
 
+DNN Setup (for user)
+====================
+
+[Python Virtualenv using Conda](./61-anaconda3/anaconda3.md)
+
+
+
 etc
 ===
 
