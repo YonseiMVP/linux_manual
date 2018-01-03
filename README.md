@@ -31,6 +31,8 @@ DNN Setup (for user)
 
 [Python Virtualenv using Conda](./62-anaconda3/anaconda3.md)
 
+[PyCharm remote execute](./63-PyCharm/PyCharm.md)
+
 
 
 etc
