@@ -27,7 +27,7 @@ DNN Setup (for admin)
 DNN Setup (for user)
 ====================
 
-[Setup SSH key-pair Login](./61-ssh_priv_key/ssh_priv_key.md)
+[Setup SSH key-pair Login](./61-ssh_key_pair/ssh_key_pair.md)
 
 [Python Virtualenv using Conda](./62-anaconda3/anaconda3.md)
 
