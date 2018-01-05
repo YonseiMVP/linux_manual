@@ -97,7 +97,7 @@ authorized_keys 파일 만들기
 - Key-pair 기반 로그인을 설정한다.
 
 ```console
-$ md ~/.ssh
+$ mkdir ~/.ssh
 $ chmod 700 ~/.ssh
 $ touch ~/.ssh/authorized_keys
 $ chmod 600 ~/.ssh/authorized_keys
