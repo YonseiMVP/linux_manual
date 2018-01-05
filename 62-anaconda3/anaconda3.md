@@ -43,27 +43,29 @@ Conda 가상환경 관리
 
 - 사용하려는 라이브러리 목록을 인자로 기재해 준다.
 - 특정 라이브러리를 사용하려면 라이브러리=버전 식으로 기재
+- 가상환경 이름은 알아보기 쉬운 것으로 권장한다
 
 ```console
 $ conda create --name py35-tf-gpu python=3.5
 ... blahblah ...
-$ pip install --ignore-installed tensorflow-gpu
-... blahblah ...
 ```
 
-### 가상환경 복사
 
-- pip로 설치한 패키지도 자동으로 처리해 준다.
-- 동일한 사용자 내에서 복사하는 방법이다. 다른 사용자나 다른 서버로 넘길거면 아래 참조.
+### 현재 생성된 가상환경을 확인하기
+
+- 현재 활성화(activate)된 환경에 * 이 붙는다.
 
 ```console
-$ conda --clone old_env_name --name new_env_name
-... blahblah ...
+$ conda env list
+# conda environments:
+#
+py35-tf-gpu              /home/koasing/.conda/envs/py35-tf-gpu
+root                  *  /opt/anaconda3
 ```
 
 ### 가상환경 활성화 및 파이썬 경로 찾기
 
-- 파이썬 경로는 PyCharm 설정에 필요하다.
+- 파이썬 경로는 PyCharm 설정에 필요하므로 따로 적어 둘 것.
 
 ```console
 $ source activate py35-tf-gpu
@@ -78,19 +80,31 @@ $ python --version
 Python 3.6.3 :: Anaconda, Inc.
 ```
 
-### 현재 생성된 가상환경을 확인하기
+### 새 패키지 설치
 
-- 현재 활성화(activate)된 환경에 * 이 붙는다.
+- 패키지를 설치할 환경을 미리 활성화 하고 진행한다.
+  아니면 `--name` 옵션으로 환경 이름을 명시해서 설치할 수도 있다.
+
+**참고** conda install tensorflow 로 설치하면 TF1.3 이 설치되므로 주의할 것.
 
 ```console
-$ conda env list
-# conda environments:
-#
-py35-tf-gpu              /home/koasing/.conda/envs/py35-tf-gpu
-root                  *  /opt/anaconda3
+$ source activate new_env_name
+$ conda install tensorflow-gpu
+... blahblah ...
 ```
 
-### 가상환경을 다른 컴퓨터로 이전하려는 경우
+### 가상환경 복사 (Optional)
+
+- pip로 설치한 패키지도 자동으로 처리해 준다.
+- 동일한 사용자 내에서 복사하는 방법이다. 다른 사용자나 다른 서버로 넘길거면 아래 참조.
+
+```console
+$ conda --clone old_env_name --name new_env_name
+... blahblah ...
+```
+
+
+### 가상환경을 다른 컴퓨터로 이전하려는 경우 (Optional)
 
 - pip로 설치한 패키지도 자동으로 처리해 준다.
 - 첫 번째 컴퓨터에서는 가상환경을 yml 파일로 내보낸다.
@@ -117,18 +131,6 @@ $ conda env remove --name old_env_name
 패키지 관리하기
 ---------------
 
-### 새 패키지 설치
-
-- 패키지를 설치할 환경을 미리 활성화 하고 진행한다.
-  아니면 `--name` 옵션으로 환경 이름을 명시해서 설치할 수도 있다.
-
-**참고** conda install tensorflow 로 설치하면 TF1.3 이 설치되므로 주의할 것.
-
-```console
-$ source activate new_env_name
-$ conda install tensorflow-gpu
-... blahblah ...
-```
 
 ### 패키지 업데이트
 
@@ -141,7 +143,7 @@ $ conda update --all
 ... blahblah ...
 ```
 
-텐서플로 설치
+예제) 텐서플로 설치
 -------------
 
 ```console
