@@ -143,7 +143,7 @@ $ conda update --all
 ... blahblah ...
 ```
 
-예제) 텐서플로 설치
+예제) Tensorflow 설치
 -------------
 
 ```console
@@ -170,6 +170,16 @@ totalMemory: 10.91GiB freeMemory: 10.72GiB
 2017-12-18 18:52:47.695915: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:01:00.0, compute capability: 6.1)
 >>> print(sess.run(h))
 b'Hello TF!'
+```
+
+
+예제) PyTorch 설치
+-------------
+
+```console
+$ source activate py36-torch
+$ conda install pytorch torchvision cuda90 -c pytorch
+... blahblah ... many packages ...
 ```
 
 -----
