@@ -16,6 +16,7 @@ Linux 설치
         - [nomodeset 기본값으로 주기 / 기본값에서 빼기](#nomodeset-%EA%B8%B0%EB%B3%B8%EA%B0%92%EC%9C%BC%EB%A1%9C-%EC%A3%BC%EA%B8%B0-%EA%B8%B0%EB%B3%B8%EA%B0%92%EC%97%90%EC%84%9C-%EB%B9%BC%EA%B8%B0)
         - [시스템 업데이트](#%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8)
     - [SSH 데몬 설치](#ssh-%EB%8D%B0%EB%AA%AC-%EC%84%A4%EC%B9%98)
+        - [SSH Server public key fingerprint](#ssh-server-public-key-fingerprint)
     - [방화벽 설치](#%EB%B0%A9%ED%99%94%EB%B2%BD-%EC%84%A4%EC%B9%98)
 
 -----
@@ -238,6 +239,26 @@ $ sudo nano /etc/ssh/sshd_config
 
 ```console
 $ sudo systemctl restart sshd
+```
+
+### SSH Server public key fingerprint
+
+SSH는 사용자 인증뿐만 아니라 서버 인증에도 Key-pair을 사용한다. 서버에도 인증서가 있는 것이다.
+서버 인증키는 SSH 설치과정에서 자동으로 생성해 주므로 파악하기 어려울 뿐이다.
+
+사용자로 하여금 내가 접속하는 서버가 진짜 그 서버가 맞는지 확인하도록 하는 것이 좋다.
+PuTTY에서 서버에 최초 접속하는 경우, 공개키 지문값을 사용자에게 묻게 되므로 서버 무결성을
+확인할 수 있는 것이다.
+
+![](31.png)
+
+`/etc/ssh` 디렉터리 안에는 SSH 데몬이 사용하는 키파일이 여러 개 존재한다.
+이 중 비밀키는 root만 확인할 수 있으며, 공개키(`.pub` 붙은 파일)는 아무나 확인할 수 있다.
+각각의 공개키 파일에 대해 다음 과정을 수행하여 지문값을 확인하여 공지하면 된다.
+
+```console
+$ ssh-keygen -l -E md5 -f /etc/ssh/ssh_host_ed25519_key.pub
+256 MD5:f9:95:41:d0:42:90:46:cc:f4:11:a0:26:fa:f3:91:5f root@DNN-server (ED25519)
 ```
 
 -----
