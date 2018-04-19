@@ -175,13 +175,14 @@ done
 
 ### 시스템 업데이트
 
-- 업데이트 서버 기본값은 대전에 위치한 [KAIST 서버](https://launchpad.net/ubuntu/+mirror/ftp.kaist.ac.kr-ubuntu)
+- ~~업데이트 서버 기본값은 대전에 위치한 [KAIST 서버](https://launchpad.net/ubuntu/+mirror/ftp.kaist.ac.kr-ubuntu)
   이다. 그런데 관리상태가 좀 부실해서 가끔 접속이 안 되는 경우가 발생하므로,
   분당에 위치한 [Neowiz 서버](https://launchpad.net/ubuntu/+mirror/ftp.neowiz.com-archive)로
-  변경한다. 이 작업은 한 번만 해 주면 된다.
+  변경한다. 이 작업은 한 번만 해 주면 된다.~~
+- 2018년 초에 KAIST에서 서버 교체하면서 상태가 괜찮아졌으니 **이 단계는 생략**한다.
 
 ```console
-$ sudo sed -i 's/kr.archive.ubuntu.com/ftp.neowiz.com/g' /etc/apt/sources.list
+$ # sudo sed -i 's/kr.archive.ubuntu.com/ftp.neowiz.com/g' /etc/apt/sources.list
 ```
 
 - 시스템에 설치되어 있는 각종 패키지를 업데이트 한다
